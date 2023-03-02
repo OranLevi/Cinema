@@ -13,6 +13,7 @@ import MoviesUpcoming from './Pages/Movies/MoviesUpcoming';
 import TvShowsPopular from './Pages/TvShows/TvShowsPopular';
 import TvShowsTopRated from './Pages/TvShows/TvShowsTopRated';
 import Footer from './components/Footer';
+import WatchList from './Pages/WatchList';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/watchlist' element={<WatchList />} />
         <Route path="/movies/popular" element={<MoviesPopular />} />
         <Route path="/movies/toprated" element={<MoviesTopRated />} />
         <Route path="/movies/upcoming" element={<MoviesUpcoming />} />
