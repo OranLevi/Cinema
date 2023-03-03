@@ -32,7 +32,7 @@ const Header = () => {
                                     <p className="d-none d-md-block">{item.overview}</p>
                                 </div>
                             </div>
-                        )) : <Loading />}
+                        )) : <Loading colorText="white" />}
                     </div>
                     <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>

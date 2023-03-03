@@ -1,6 +1,7 @@
 const express = require("express");
-const https = require('https');
 const cors = require('cors');
+
+const { getDataApi } = require('./getDataApi.js');
 
 require('dotenv').config();
 
@@ -25,53 +26,18 @@ app.get("/card/:category/:mediaType", (req, res) => {
       res.status(400).send("Error");
       return;
   }
-
-  https.get(url, (httpsRes) => {
-    let body = "";
-    httpsRes.on("data", (chunk) => {
-      body += chunk;
-    });
-    httpsRes.on("end", () => {
-      try {
-        let data = JSON.parse(body);
-
-        res.send(data);
-      } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Internal Server Error');
-      };
-    });
-  }).on("error", (error) => {
-    console.error(error.message);
-    res.status(500).send('Internal Server Error');
-  });
+  getDataApi(url, res)
 });
 
 app.get("/header", (req, res) => {
-
   const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}`
-
-  https.get(url, (httpsRes) => {
-    let body = "";
-    httpsRes.on("data", (chunk) => {
-      body += chunk;
-    });
-    httpsRes.on("end", () => {
-      try {
-        let data = JSON.parse(body);
-
-        res.send(data);
-      } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Internal Server Error');
-      };
-    });
-  }).on("error", (error) => {
-    console.error(error.message);
-    res.status(500).send('Internal Server Error');
-  });
+  getDataApi(url, res)
 });
 
+app.get("/details/:mediaType/:id", (req, res) => {
+  const url = `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${process.env.API_KEY}`
+  getDataApi(url, res)
+});
 
 app.listen(3001, () => {
   console.log("Server run")

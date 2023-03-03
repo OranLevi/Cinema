@@ -1,9 +1,18 @@
 const Details = () => {
-    return ( 
-    <>
-    
-    
-    </> );
+    return (
+        <>
+
+
+
+            <div>
+
+
+
+            </div>
+
+
+        </>
+    );
 }
- 
+
 export default Details;

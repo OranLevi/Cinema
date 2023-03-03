@@ -7,13 +7,10 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 import Home from './components/Home';
-import MoviesPopular from './Pages/Movies/MoviesPopular';
-import MoviesTopRated from './Pages/Movies/MoviesTopRated';
-import MoviesUpcoming from './Pages/Movies/MoviesUpcoming';
-import TvShowsPopular from './Pages/TvShows/TvShowsPopular';
-import TvShowsTopRated from './Pages/TvShows/TvShowsTopRated';
+import PagesCategory from './Pages/PagesCategory';
 import Footer from './components/Footer';
 import WatchList from './Pages/WatchList';
+import Details from './Pages/Details';
 
 
 function App() {
@@ -23,11 +20,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/watchlist' element={<WatchList />} />
-        <Route path="/movies/popular" element={<MoviesPopular />} />
-        <Route path="/movies/toprated" element={<MoviesTopRated />} />
-        <Route path="/movies/upcoming" element={<MoviesUpcoming />} />
-        <Route path="/tvshows/popular" element={<TvShowsPopular />} />
-        <Route path="/tvshows/toprated" element={<TvShowsTopRated />} />
+
+        <Route path="/movies/popular" element={<PagesCategory pageName="Popular Movies" />} />
+        <Route path="/movies/toprated" element={<PagesCategory pageName="Top rated Movies" />} />
+        <Route path="/movies/upcoming" element={<PagesCategory pageName="Upcoming Movies" />} />
+        <Route path="/tvshows/popular" element={<PagesCategory pageName="Popular Tv Shows" />} />
+        <Route path="/tvshows/toprated" element={<PagesCategory pageName="Top rated Tv Shows" />} />
+        <Route path="/details/:mediaType/:id" element={<Details />} />
 
       </Routes>
       <Footer />
