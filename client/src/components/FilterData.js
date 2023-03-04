@@ -1,4 +1,5 @@
 const FilterData = () => {
+
 	return (
 		<>
 
@@ -7,9 +8,13 @@ const FilterData = () => {
 					Sort By
 				</button>
 				<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-					<li><a className="dropdown-item" href="/#">Action</a></li>
-					<li><a className="dropdown-item" href="/#">Another action</a></li>
-					<li><a className="dropdown-item" href="/#">Something else here</a></li>
+					<li><a className="dropdown-item" href="/#">Title (A-Z)</a></li>
+					<li><a className="dropdown-item" href="/#">Title (Z-A)</a></li>
+					<li><a className="dropdown-item" href="/#">Release Date new to old</a></li>
+					<li><a className="dropdown-item" href="/#">Release Date old to new</a></li>
+					<li><a className="dropdown-item" href="/#">Rating High to Low</a></li>
+					<li><a className="dropdown-item" href="/#">Rating Low to High</a></li>
+
 				</ul>
 			</div>
 

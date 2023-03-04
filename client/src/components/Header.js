@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -26,12 +27,16 @@ const Header = () => {
                     <div className="carousel-inner">
                         {data.length > 0 ? data.slice(0, 3).map((item, index) => (
                             <div key={item.id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                                <img className="d-block w-100" src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`} alt="backdrop" />
-                                <div className="carousel-caption ">
-                                    <h5>{item.title}</h5>
-                                    <p className="d-none d-md-block">{item.overview}</p>
-                                </div>
+                                <Link to={`/details/movie/${item.id}`} className="link-style">
+
+                                    <img className="d-block w-100" src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`} alt="backdrop" />
+                                    <div className="carousel-caption ">
+                                        <h5>{item.title}</h5>
+                                        <p className="d-none d-md-block">{item.overview}</p>
+                                    </div>
+                                </Link>
                             </div>
+
                         )) : <Loading colorText="white" />}
                     </div>
                     <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

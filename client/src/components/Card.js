@@ -8,19 +8,17 @@ const Card = (props) => {
 
   const [data, setData] = useState([]);
   const [mediaType, setMediaType] = useState("movie")
+  const [page, setPage] = useState("1")
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/card/${props.category}/${mediaType}`)
+      .get(`http://localhost:3001/card/${props.category}/${mediaType}/${page}`)
       .then((response) => {
         setData(response.data.results);
       })
       .catch((error) => console.error(error));
-  }, [props.category, mediaType, setMediaType]);
+  }, [props.category, mediaType, page]);
 
-  useEffect(() => {
-    console.log(data.results);
-  }, [data]);
 
   return (
     <>
@@ -43,7 +41,7 @@ const Card = (props) => {
           {data.length > 0 ?
             data.map((item, index) => (
               <div key={index} className="col-lg-2 col-sm-4 col-xs-4 col-4">
-                <Link to={`/details/${item.media_type}/${item.id}`} className="link-style">
+                <Link to={`/details/${mediaType === "all" ? item.media_type : mediaType}/${item.id}`} className="link-style">
 
                   <div className="card card-block">
 

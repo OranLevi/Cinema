@@ -47,3 +47,9 @@
     text-decoration: none;
     color: black;
 }
+
+.card-block-details {
+    text-align: center;
+    align-items: center;
+    height: 490px;
+}
