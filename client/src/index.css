@@ -21,7 +21,7 @@
 .card-category-block {
     text-align: center;
     align-items: center;
-    height: 450px;
+    height: 470px;
 }
 
 .card-block:hover {
@@ -52,4 +52,24 @@
     text-align: center;
     align-items: center;
     height: 490px;
+}
+
+.card-production-companies {
+    text-align: center;
+    align-items: center;
+    height: 180px;
+}
+
+.card-production-companies-img {
+    width: 80%;
+    height: 100px;
+    padding: 5px;
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }

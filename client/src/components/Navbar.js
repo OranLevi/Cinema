@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const [searchValue, setSearchValue] = useState("");
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -22,7 +26,7 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Movies
+                                    Movies
                                 </a>
                                 <ul className="dropdown-menu" style={{ margin: 0 }}>
 
@@ -43,10 +47,20 @@ const Navbar = () => {
                                 </ul>
                             </li>
                         </ul>
+
                         <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
+
+
+                            <input id="searchInput" className="form-control me-2" type="search" value={searchValue} placeholder="Search" onChange={(e) => {
+                                setSearchValue(e.target.value)
+                            }} aria-label="Search" />
+                            <Link to={`/search/${searchValue}`} className="btn btn-outline-success" onClick={() => {
+                                setSearchValue("")
+                            }} type="submit" >
+                                Search
+                            </Link>
                         </form>
+
                     </div>
                 </div>
             </nav>

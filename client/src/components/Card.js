@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Loading from "./Loading";
 import { truncateString } from '../utils';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import Loading from "./Loading";
+
 
 const Card = (props) => {
 
   const [data, setData] = useState([]);
   const [mediaType, setMediaType] = useState("movie")
-  const [page, setPage] = useState("1")
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/card/${props.category}/${mediaType}/${page}`)
+      .get(`http://localhost:3001/card/${props.category}/${mediaType}/1`)
       .then((response) => {
         setData(response.data.results);
       })
       .catch((error) => console.error(error));
-  }, [props.category, mediaType, page]);
+  }, [props.category, mediaType]);
 
 
   return (
     <>
-      <div className="container">
+      <div className="container ">
         <div className="mt-5">
           <div className="row align-items-center">
             <div className="col-auto">
@@ -41,12 +41,12 @@ const Card = (props) => {
           {data.length > 0 ?
             data.map((item, index) => (
               <div key={index} className="col-lg-2 col-sm-4 col-xs-4 col-4">
-                <Link to={`/details/${mediaType === "all" ? item.media_type : mediaType}/${item.id}`} className="link-style">
+                <Link to={`/details/${mediaType === "all" ? item.media_type : mediaType}/${item.id}`} className="link-style" onClick={() => window.scrollTo(0, 0)}>
 
                   <div className="card card-block">
 
                     <img
-                      src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                      src={item.poster_path === null ? "/image/imageUnavailable.png" : `https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                       className="card-img-top"
                       alt="poster"
                     />

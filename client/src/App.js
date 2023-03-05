@@ -11,6 +11,7 @@ import PagesCategory from './Pages/PagesCategory';
 import Footer from './components/Footer';
 import WatchList from './Pages/WatchList';
 import Details from './Pages/Details';
+import Search from './components/Search';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
         <Route path="/tvshows/popular" element={<PagesCategory pageName="Popular Tv Shows" />} />
         <Route path="/tvshows/toprated" element={<PagesCategory pageName="Top rated Tv Shows" />} />
         <Route path="/details/:mediaType/:id" element={<Details />} />
-
+        <Route path="/search/:textSerach" element={<Search />} />
       </Routes>
       <Footer />
     </div>

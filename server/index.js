@@ -27,7 +27,7 @@ app.get("/card/:category/:mediaType/:page", (req, res) => {
       res.status(400).send("Error");
       return;
   }
-  console.log(url)
+
   getDataApi(url, res)
 });
 
@@ -53,6 +53,16 @@ app.get("/reviews/:mediaType/:id", (req, res) => {
   const url = `https://api.themoviedb.org/3/${mediaType}/${id}/reviews?api_key=${process.env.API_KEY}`
 
   getDataApi(url, res)
+});
+
+app.get("/search/:textSerach/:page", (req, res) => {
+  const textSerach = req.params.textSerach;
+  const page = req.params.page;
+
+  const urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${textSerach}&page=${page}`
+
+  getDataApi(urlMovies, res)
+
 });
 
 app.listen(3001, () => {
