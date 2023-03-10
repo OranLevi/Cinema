@@ -21,7 +21,7 @@
 .card-category-block {
     text-align: center;
     align-items: center;
-    height: 470px;
+    height: 490px;
 }
 
 .card-block:hover {
@@ -72,4 +72,16 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.menu-my-account {
+    height: 100vh;
+
+}
+
+@media only screen and (max-width: 992px) {
+    .menu-my-account {
+
+        height: 100%;
+    }
 }

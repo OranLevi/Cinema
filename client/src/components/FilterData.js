@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const FilterData = (props) => {
+
+	const location = useLocation();
 
 	const [selectedFilerSortBy, setSelectdFilterSortBy] = useState(("Sort By"));
 
@@ -18,10 +21,11 @@ const FilterData = (props) => {
 					{selectedFilerSortBy}
 				</button>
 				<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" onClick={handleFilterSortBy}>
+
 					<li><a className="dropdown-item" href="/#">Title (A-Z)</a></li>
 					<li><a className="dropdown-item" href="/#">Title (Z-A)</a></li>
-					<li><a className="dropdown-item" href="/#">Release Date new to old</a></li>
-					<li><a className="dropdown-item" href="/#">Release Date old to new</a></li>
+					{!location.pathname.includes("tvshows") && <li><a className="dropdown-item" href="/#">Release Date new to old</a></li>}
+					{!location.pathname.includes("tvshows") && < li><a className="dropdown-item" href="/#">Release Date old to new</a></li>}
 					<li><a className="dropdown-item" href="/#">Rating High to Low</a></li>
 					<li><a className="dropdown-item" href="/#">Rating Low to High</a></li>
 

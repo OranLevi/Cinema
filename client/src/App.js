@@ -9,10 +9,11 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PagesCategory from './Pages/PagesCategory';
 import Footer from './components/Footer';
-import WatchList from './Pages/WatchList';
 import Details from './Pages/Details';
 import Search from './components/Search';
-
+import MyAccount from './Pages/MyAccount';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/watchlist' element={<WatchList />} />
-
+        <Route path='/myaccount' element={<MyAccount />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path="/movies/popular" element={<PagesCategory pageName="Popular Movies" />} />
         <Route path="/movies/toprated" element={<PagesCategory pageName="Top rated Movies" />} />
         <Route path="/movies/upcoming" element={<PagesCategory pageName="Upcoming Movies" />} />

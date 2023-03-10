@@ -16,10 +16,6 @@ const Header = () => {
             .catch((error) => console.error(error));
     }, []);
 
-    useEffect(() => {
-        console.log(data.results);
-    }, [data]);
-
     return (
         <header className="bg-dark">
             <div className="container">

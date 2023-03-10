@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { truncateString } from '../utils';
 import { Link } from 'react-router-dom';
+import { truncateString } from '../utils';
 import axios from "axios";
 import Loading from "./Loading";
-
 
 const Card = (props) => {
 
@@ -44,7 +43,6 @@ const Card = (props) => {
                 <Link to={`/details/${mediaType === "all" ? item.media_type : mediaType}/${item.id}`} className="link-style" onClick={() => window.scrollTo(0, 0)}>
 
                   <div className="card card-block">
-
                     <img
                       src={item.poster_path === null ? "/image/imageUnavailable.png" : `https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                       className="card-img-top"
@@ -57,6 +55,7 @@ const Card = (props) => {
                 </Link>
 
               </div>
+
             )) :
             <Loading />
           }
