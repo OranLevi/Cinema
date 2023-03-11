@@ -31,40 +31,40 @@ To run this application on your local machine, follow these steps:
 
    ```sh
    git clone https://github.com/OranLevi/Cinema.git
-   
-2. Install dependencies:
-
-   ```sh
-   cd client
-   npm install
-   
-3. Start the client:
-
-   ```sh
-   npm start
-   
-3. Create a .env file in the server directory and add your MongoDB connection string and API key from [TheMovieDB](https://www.themoviedb.org/signup):
+  
+2. Create a .env file in the server directory and add your MongoDB connection string and API key from [TheMovieDB](https://www.themoviedb.org/signup):
 
    ```sh
    API_KEY=YOUR_API_KEY_HERE 
    MONGODB_URI=YOUR_MONGODB_URI_HERE
    
-4. Open a new terminal tab or window and navigate to the server:
+3. Open a new terminal tab or window and navigate to the server:
 
    ```sh
-   cd ../server
+   cd server
  
-5. Install dependencies for the server:
+4. Install dependencies for the server:
 
    ```sh
    npm install 
 
-6. Start the server:
+5. Start the server:
 
    ```sh
    npm start
+   
+6. Install dependencies:
 
-7. Open the application in your browser:
+   ```sh
+   cd ../client
+   npm install
+   
+7. Start the client:
+
+   ```sh
+   npm start
+   
+8. Open the application in your browser:
 
    ```sh
    http://localhost:3000/
