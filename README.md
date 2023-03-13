@@ -12,6 +12,7 @@ A web application for recommending watching movies and TV shows and reading user
 - Express
 - Nodemon
 - MongoDB
+- Mongoose
 - universal-cookie
 - dotenv
 - bcrypt
@@ -19,8 +20,9 @@ A web application for recommending watching movies and TV shows and reading user
 ## Features
 
 - Browse movies and TV shows by rating, Release Date or popularity.
+- Search for movies and TV shows.
 - Read user reviews and ratings for each movie and TV show.
-- Bookmark your favorite movies and TV shows for later viewing.
+- Personalized watchlist.
 - Sign in to your account to access your saved watchlist.
 
 ## Getting Started
